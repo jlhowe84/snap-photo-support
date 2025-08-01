@@ -42,13 +42,14 @@ async function loadFAQs() {
 /**
  * Parse markdown FAQ content into structured data
  * @param {string} markdownText - Raw markdown content
- * @returns {Array} - Array of FAQ objects with question and answer
+ * @returns {Array} - Array of FAQ objects with question, answer, and keywords
  */
 function parseMarkdownFAQs(markdownText) {
     const faqs = [];
     const lines = markdownText.split('\n');
     let currentQuestion = '';
     let currentAnswer = '';
+    let currentKeywords = '';
     let inAnswer = false;
     
     for (let i = 0; i < lines.length; i++) {
@@ -65,14 +66,19 @@ function parseMarkdownFAQs(markdownText) {
             if (currentQuestion && currentAnswer) {
                 faqs.push({
                     question: currentQuestion,
-                    answer: currentAnswer.trim()
+                    answer: currentAnswer.trim(),
+                    keywords: currentKeywords.trim()
                 });
             }
             
             // Start new FAQ
             currentQuestion = line.substring(3); // Remove '## '
             currentAnswer = '';
+            currentKeywords = '';
             inAnswer = true;
+        } else if (inAnswer && line.startsWith('**Keywords:**')) {
+            // Extract keywords
+            currentKeywords = line.substring(11).trim(); // Remove '**Keywords:**'
         } else if (inAnswer && line) {
             // Add line to current answer
             currentAnswer += line + '\n';
@@ -83,7 +89,8 @@ function parseMarkdownFAQs(markdownText) {
     if (currentQuestion && currentAnswer) {
         faqs.push({
             question: currentQuestion,
-            answer: currentAnswer.trim()
+            answer: currentAnswer.trim(),
+            keywords: currentKeywords.trim()
         });
     }
     
@@ -130,7 +137,7 @@ function convertMarkdownLinks(text) {
 
 /**
  * Create a single FAQ accordion item
- * @param {Object} faq - FAQ object with question and answer
+ * @param {Object} faq - FAQ object with question, answer, and keywords
  * @param {number} index - Index of the FAQ item
  * @returns {HTMLElement} - FAQ accordion item element
  */
@@ -138,6 +145,11 @@ function createFAQItem(faq, index) {
     const faqItem = document.createElement('div');
     faqItem.className = 'accordion-item';
     faqItem.setAttribute('data-faq-item', '');
+    
+    // Add keywords as data attribute for search
+    if (faq.keywords) {
+        faqItem.setAttribute('data-keywords', faq.keywords.toLowerCase());
+    }
     
     const itemId = index + 1;
     const isFirst = index === 0;
@@ -207,8 +219,11 @@ function initFAQSearch() {
         faqItems.forEach(item => {
             const questionText = item.querySelector('.accordion-button').textContent.toLowerCase();
             const answerText = item.querySelector('.accordion-body').textContent.toLowerCase();
+            const keywords = item.getAttribute('data-keywords') || '';
             
-            const matchesSearch = questionText.includes(searchTerm) || answerText.includes(searchTerm);
+            const matchesSearch = questionText.includes(searchTerm) || 
+                                 answerText.includes(searchTerm) || 
+                                 keywords.includes(searchTerm);
             
             // Show/hide items based on search
             if (searchTerm === '' || matchesSearch) {
