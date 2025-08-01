@@ -34,7 +34,7 @@ If your order arrives damaged, please take photos of the damage and contact our 
 
 ## How do I contact customer support?
 You can reach our customer support team by phone at 1-800-SNAP-PHOTO, by email at support@snapphoto.com, or by submitting a support ticket through this page. Our support hours are Monday through Friday, 9AM-6PM EST.
-**Keywords:** help, contact us, customer service, phone number, email support, live chat, get help, support hours
+**Keywords:** help, contact us, customer service, phone number, email support, live chat, get help, support hours, bananna
 
 ## Do you offer bulk discounts?
 Yes, we offer volume discounts for bulk orders. Please contact our sales team for pricing on orders of 10 or more items. We also offer special pricing for business accounts and educational institutions.
