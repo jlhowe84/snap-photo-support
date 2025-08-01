@@ -10,7 +10,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize all functionality
     loadFAQs().then(() => {
         initFAQSearch();
-        initFormValidation();
         initAccessibilityEnhancements();
         console.log('SNAP Photo Support Page initialized successfully');
     }).catch(error => {
@@ -289,234 +288,9 @@ function escapeRegExp(string) {
     return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 }
 
-/**
- * Form Validation Functionality
- * Handles form validation for the support ticket form
- */
-function initFormValidation() {
-    const form = document.getElementById('support-form');
-    
-    if (!form) {
-        console.warn('Support form not found');
-        return;
-    }
-    
-    // Get form elements
-    const nameInput = document.getElementById('name');
-    const emailInput = document.getElementById('email');
-    const subjectSelect = document.getElementById('subject');
-    const messageTextarea = document.getElementById('message');
-    const submitButton = form.querySelector('button[type="submit"]');
-    
-    // Add validation event listeners
-    const requiredFields = [nameInput, emailInput, subjectSelect, messageTextarea];
-    
-    requiredFields.forEach(field => {
-        if (field) {
-            // Real-time validation
-            field.addEventListener('blur', function() {
-                validateField(field);
-            });
-            
-            // Clear validation on input
-            field.addEventListener('input', function() {
-                clearFieldValidation(field);
-            });
-        }
-    });
-    
-    // Form submission handler
-    form.addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        // Validate all fields
-        const isValid = validateAllFields(requiredFields);
-        
-        if (isValid) {
-            handleFormSubmission(form);
-        } else {
-            // Focus on first invalid field
-            const firstInvalidField = form.querySelector('.is-invalid');
-            if (firstInvalidField) {
-                firstInvalidField.focus();
-            }
-        }
-    });
-}
 
-/**
- * Validate a single form field
- * @param {HTMLElement} field - The form field to validate
- * @returns {boolean} - Whether the field is valid
- */
-function validateField(field) {
-    const value = field.value.trim();
-    let isValid = true;
-    let errorMessage = '';
-    
-    // Check if field is required
-    if (field.hasAttribute('required') && value === '') {
-        isValid = false;
-        errorMessage = getRequiredErrorMessage(field);
-    }
-    
-    // Email validation
-    if (field.type === 'email' && value !== '') {
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailRegex.test(value)) {
-            isValid = false;
-            errorMessage = 'Please enter a valid email address.';
-        }
-    }
-    
-    // Name validation (minimum 2 characters)
-    if (field.id === 'name' && value !== '' && value.length < 2) {
-        isValid = false;
-        errorMessage = 'Name must be at least 2 characters long.';
-    }
-    
-    // Message validation (minimum 10 characters)
-    if (field.id === 'message' && value !== '' && value.length < 10) {
-        isValid = false;
-        errorMessage = 'Message must be at least 10 characters long.';
-    }
-    
-    // Apply validation result
-    if (isValid) {
-        setFieldValid(field);
-    } else {
-        setFieldInvalid(field, errorMessage);
-    }
-    
-    return isValid;
-}
 
-/**
- * Validate all form fields
- * @param {Array} fields - Array of form fields to validate
- * @returns {boolean} - Whether all fields are valid
- */
-function validateAllFields(fields) {
-    let allValid = true;
-    
-    fields.forEach(field => {
-        if (!validateField(field)) {
-            allValid = false;
-        }
-    });
-    
-    return allValid;
-}
 
-/**
- * Set field as valid
- * @param {HTMLElement} field - The form field
- */
-function setFieldValid(field) {
-    field.classList.remove('is-invalid');
-    field.classList.add('is-valid');
-    
-    const errorElement = field.parentNode.querySelector('.invalid-feedback');
-    if (errorElement) {
-        errorElement.style.display = 'none';
-    }
-}
-
-/**
- * Set field as invalid
- * @param {HTMLElement} field - The form field
- * @param {string} message - Error message to display
- */
-function setFieldInvalid(field, message) {
-    field.classList.remove('is-valid');
-    field.classList.add('is-invalid');
-    
-    const errorElement = field.parentNode.querySelector('.invalid-feedback');
-    if (errorElement) {
-        errorElement.textContent = message;
-        errorElement.style.display = 'block';
-    }
-}
-
-/**
- * Clear field validation
- * @param {HTMLElement} field - The form field
- */
-function clearFieldValidation(field) {
-    field.classList.remove('is-valid', 'is-invalid');
-    
-    const errorElement = field.parentNode.querySelector('.invalid-feedback');
-    if (errorElement) {
-        errorElement.style.display = 'none';
-    }
-}
-
-/**
- * Get required field error message
- * @param {HTMLElement} field - The form field
- * @returns {string} - Error message
- */
-function getRequiredErrorMessage(field) {
-    const fieldName = field.previousElementSibling?.textContent.replace('*', '').trim() || 'This field';
-    return `${fieldName} is required.`;
-}
-
-/**
- * Handle form submission
- * @param {HTMLElement} form - The form element
- */
-function handleFormSubmission(form) {
-    const submitButton = form.querySelector('button[type="submit"]');
-    const originalText = submitButton.innerHTML;
-    
-    // Show loading state
-    submitButton.disabled = true;
-    submitButton.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Submitting...';
-    
-    // Simulate form submission (replace with actual API call)
-    setTimeout(() => {
-        // Show success message
-        showSuccessMessage(form);
-        
-        // Reset form
-        form.reset();
-        
-        // Clear validation states
-        form.querySelectorAll('.form-control, .form-select').forEach(field => {
-            clearFieldValidation(field);
-        });
-        
-        // Reset button
-        submitButton.disabled = false;
-        submitButton.innerHTML = originalText;
-        
-    }, 2000);
-}
-
-/**
- * Show success message
- * @param {HTMLElement} form - The form element
- */
-function showSuccessMessage(form) {
-    // Create success alert
-    const alertDiv = document.createElement('div');
-    alertDiv.className = 'alert alert-success alert-dismissible fade show mt-3';
-    alertDiv.innerHTML = `
-        <i class="fas fa-check-circle me-2"></i>
-        Thank you! Your support ticket has been submitted successfully. We'll get back to you within 24 hours.
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-    `;
-    
-    // Insert after form
-    form.parentNode.insertBefore(alertDiv, form.nextSibling);
-    
-    // Auto-dismiss after 5 seconds
-    setTimeout(() => {
-        if (alertDiv.parentNode) {
-            alertDiv.remove();
-        }
-    }, 5000);
-}
 
 /**
  * Accessibility Enhancements
@@ -592,10 +366,12 @@ function announceToScreenReader(message) {
     }
 }
 
+
+
+
+
 // Export functions for potential external use
 window.SNAPSupport = {
     initFAQSearch,
-    initFormValidation,
-    validateField,
     announceToScreenReader
 }; 
