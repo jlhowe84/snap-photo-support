@@ -119,6 +119,16 @@ function renderFAQs(faqs) {
 }
 
 /**
+ * Convert markdown links to HTML
+ * @param {string} text - Text containing markdown links
+ * @returns {string} - Text with markdown links converted to HTML
+ */
+function convertMarkdownLinks(text) {
+    // Convert markdown links [text](url) to HTML <a> tags
+    return text.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>');
+}
+
+/**
  * Create a single FAQ accordion item
  * @param {Object} faq - FAQ object with question and answer
  * @param {number} index - Index of the FAQ item
@@ -131,6 +141,9 @@ function createFAQItem(faq, index) {
     
     const itemId = index + 1;
     const isFirst = index === 0;
+    
+    // Convert markdown links in the answer
+    const processedAnswer = convertMarkdownLinks(faq.answer);
     
     faqItem.innerHTML = `
         <h3 class="accordion-header" id="faq-heading-${itemId}">
@@ -148,7 +161,7 @@ function createFAQItem(faq, index) {
              data-bs-parent="#faqAccordion" 
              aria-labelledby="faq-heading-${itemId}">
             <div class="accordion-body">
-                ${faq.answer}
+                ${processedAnswer}
             </div>
         </div>
     `;
