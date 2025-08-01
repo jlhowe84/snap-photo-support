@@ -13,7 +13,7 @@ To reset your password, click on the "Forgot Password" link on the login page. E
 We accept all major credit cards (Visa, MasterCard, American Express, Discover), PayPal, Apple Pay, Google Pay, and bank transfers for business accounts. All transactions are secured with SSL encryption to protect your payment information.
 
 ## How long does shipping take?
-[Standard](https://www.google.com) shipping typically takes 3-5 business days within the continental US. Express shipping (1-2 business days) and overnight shipping are also available for an additional fee. International shipping times vary by location and can take 7-14 business days.
+Standard shipping typically takes 3-5 business days within the continental US. Express shipping (1-2 business days) and overnight shipping are also available for an additional fee. International shipping times vary by location and can take 7-14 business days.
 
 ## Can I cancel my order after it's placed?
 Orders can be cancelled within 2 hours of placement if they haven't been processed for shipping. After that time, please contact our support team immediately. Once an order has shipped, it cannot be cancelled but can be returned following our return policy.
