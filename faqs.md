@@ -1,6 +1,6 @@
 # SNAP Photo FAQ
 
-## How do I track my order?
+## How do I track my orderssssss?
 You can track your order by logging into your account and visiting the "My Orders" section. Alternatively, you can use the tracking number provided in your order confirmation email to track your package on our website or through the shipping carrier's website.
 **Keywords:** tracking, order status, package location, delivery, shipping status, where is my order, order confirmation
 
