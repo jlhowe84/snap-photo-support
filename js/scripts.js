@@ -279,6 +279,12 @@ function showCategoryFAQs(category) {
     // Initialize back button functionality
     initBackButton();
     
+    // Scroll to the top of the FAQ section
+    const faqSection = document.getElementById('faq-section');
+    if (faqSection) {
+        faqSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+    
     // Announce to screen readers
     announceToScreenReader(`Showing ${categoryFaqs.length} questions in ${cleanCategory}`);
 }
