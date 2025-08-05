@@ -47,3 +47,7 @@ and yet another answer. so cool!
 ## Where are my pictures?!?!?
 chill, they are in production and will be on their way shortly.
 **Keywords:** photos, pictures, prints, production, processing time, photo prints, when will my photos arrive, photo processing
+
+## Do you offer gift wrapping?
+Yes, we offer gift wrapping for a small additional fee. You can select the gift wrapping option during checkout and add a personalized message.
+**Keywords:** gift wrap, gift wrapping, present, gift message, gift option, wrapping paper
