@@ -333,24 +333,23 @@ function createFAQItem(faq, index) {
     }
     
     const itemId = `faq-${Date.now()}-${index}`;
-    const isFirst = index === 0;
     
     // Convert markdown links in the answer
     const processedAnswer = convertMarkdownLinks(faq.answer);
     
     faqItem.innerHTML = `
         <h3 class="accordion-header" id="faq-heading-${itemId}">
-            <button class="accordion-button ${isFirst ? '' : 'collapsed'}" 
+            <button class="accordion-button collapsed" 
                     type="button" 
                     data-bs-toggle="collapse" 
                     data-bs-target="#faq-collapse-${itemId}" 
-                    aria-expanded="${isFirst ? 'true' : 'false'}" 
+                    aria-expanded="false" 
                     aria-controls="faq-collapse-${itemId}">
                 ${faq.question}
             </button>
         </h3>
         <div id="faq-collapse-${itemId}" 
-             class="accordion-collapse collapse ${isFirst ? 'show' : ''}" 
+             class="accordion-collapse collapse" 
              data-bs-parent="#faqAccordion" 
              aria-labelledby="faq-heading-${itemId}">
             <div class="accordion-body">
