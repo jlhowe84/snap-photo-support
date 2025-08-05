@@ -186,9 +186,6 @@ function createCategoryCard(category, faqs) {
             </div>
             <h5 class="card-title">${cleanCategory}</h5>
             <p class="card-text text-muted">${faqs.length} question${faqs.length !== 1 ? 's' : ''}</p>
-            <div class="category-btn">
-                <i class="fas fa-arrow-right me-1"></i>View Questions
-            </div>
         </div>
     `;
     
