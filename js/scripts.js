@@ -1,7 +1,7 @@
 /*
  * SNAP Photo Support Page - JavaScript Functionality
  * Purpose: Handles FAQ search filtering and form validation for the support ticket form
- * Features: Real-time FAQ search, form validation, accessibility enhancements
+ * Features: Real-time FAQ search, form validation, accessibility enhancements, categorized FAQs
  */
 
 // Wait for DOM to be fully loaded
@@ -31,7 +31,7 @@ async function loadFAQs() {
         
         const markdownText = await response.text();
         const faqs = parseMarkdownFAQs(markdownText);
-        renderFAQs(faqs);
+        renderCategoryCards(faqs);
         
     } catch (error) {
         console.error('Error loading FAQs:', error);
@@ -40,9 +40,9 @@ async function loadFAQs() {
 }
 
 /**
- * Parse markdown FAQ content into structured data
+ * Parse markdown FAQ content into structured data with categories
  * @param {string} markdownText - Raw markdown content
- * @returns {Array} - Array of FAQ objects with question, answer, and keywords
+ * @returns {Array} - Array of FAQ objects with question, answer, keywords, and category
  */
 function parseMarkdownFAQs(markdownText) {
     const faqs = [];
@@ -50,6 +50,7 @@ function parseMarkdownFAQs(markdownText) {
     let currentQuestion = '';
     let currentAnswer = '';
     let currentKeywords = '';
+    let currentCategory = 'General';
     let inAnswer = false;
     
     for (let i = 0; i < lines.length; i++) {
@@ -67,7 +68,8 @@ function parseMarkdownFAQs(markdownText) {
                 faqs.push({
                     question: currentQuestion,
                     answer: currentAnswer.trim(),
-                    keywords: currentKeywords.trim()
+                    keywords: currentKeywords.trim(),
+                    category: currentCategory
                 });
             }
             
@@ -75,10 +77,14 @@ function parseMarkdownFAQs(markdownText) {
             currentQuestion = line.substring(3); // Remove '## '
             currentAnswer = '';
             currentKeywords = '';
+            currentCategory = 'General'; // Default category
             inAnswer = true;
         } else if (inAnswer && line.startsWith('**Keywords:**')) {
             // Extract keywords
             currentKeywords = line.substring(11).trim(); // Remove '**Keywords:**'
+        } else if (inAnswer && line.startsWith('**Category:**')) {
+            // Extract category
+            currentCategory = line.substring(12).trim(); // Remove '**Category:**'
         } else if (inAnswer && line) {
             // Add line to current answer
             currentAnswer += line + '\n';
@@ -90,7 +96,8 @@ function parseMarkdownFAQs(markdownText) {
         faqs.push({
             question: currentQuestion,
             answer: currentAnswer.trim(),
-            keywords: currentKeywords.trim()
+            keywords: currentKeywords.trim(),
+            category: currentCategory
         });
     }
     
@@ -98,15 +105,15 @@ function parseMarkdownFAQs(markdownText) {
 }
 
 /**
- * Render FAQs as Bootstrap accordion items
+ * Render category cards based on FAQ data
  * @param {Array} faqs - Array of FAQ objects
  */
-function renderFAQs(faqs) {
-    const accordionContainer = document.getElementById('faqAccordion');
-    const loadingElement = document.getElementById('faq-loading');
+function renderCategoryCards(faqs) {
+    const categoryCardsContainer = document.getElementById('category-cards');
+    const loadingElement = document.getElementById('categories-loading');
     
-    if (!accordionContainer) {
-        console.error('FAQ accordion container not found');
+    if (!categoryCardsContainer) {
+        console.error('Category cards container not found');
         return;
     }
     
@@ -115,29 +122,196 @@ function renderFAQs(faqs) {
         loadingElement.remove();
     }
     
-    // Create FAQ items
-    faqs.forEach((faq, index) => {
-        const faqItem = createFAQItem(faq, index);
-        accordionContainer.appendChild(faqItem);
+    // Group FAQs by category
+    const categorizedFaqs = groupFAQsByCategory(faqs);
+    
+    // Create category cards
+    Object.keys(categorizedFaqs).forEach(category => {
+        if (category !== 'General' || categorizedFaqs[category].length > 0) {
+            const categoryCard = createCategoryCard(category, categorizedFaqs[category]);
+            categoryCardsContainer.appendChild(categoryCard);
+        }
     });
     
+    // Store FAQs globally for search functionality
+    window.allFaqs = faqs;
+    window.categorizedFaqs = categorizedFaqs;
+    
     // Announce to screen readers
-    announceToScreenReader(`Loaded ${faqs.length} frequently asked questions`);
+    announceToScreenReader(`Loaded ${Object.keys(categorizedFaqs).length} FAQ categories`);
 }
 
 /**
- * Convert markdown links to HTML
- * @param {string} text - Text containing markdown links
- * @returns {string} - Text with markdown links converted to HTML
+ * Group FAQs by category
+ * @param {Array} faqs - Array of FAQ objects
+ * @returns {Object} - Object with categories as keys and FAQ arrays as values
  */
-function convertMarkdownLinks(text) {
-    // Convert markdown links [text](url) to HTML <a> tags
-    return text.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>');
+function groupFAQsByCategory(faqs) {
+    const categorized = {};
+    
+    faqs.forEach(faq => {
+        const category = faq.category || 'General';
+        if (!categorized[category]) {
+            categorized[category] = [];
+        }
+        categorized[category].push(faq);
+    });
+    
+    return categorized;
+}
+
+/**
+ * Create a category card element
+ * @param {string} category - Category name
+ * @param {Array} faqs - Array of FAQs in this category
+ * @returns {HTMLElement} - Category card element
+ */
+function createCategoryCard(category, faqs) {
+    const col = document.createElement('div');
+    col.className = 'col-md-6 col-lg-4 mb-3';
+    
+    const card = document.createElement('div');
+    card.className = 'card h-100 category-card';
+    card.setAttribute('data-category', category);
+    
+    const icon = getCategoryIcon(category);
+    
+    // Clean the category value to remove any unwanted characters
+    const cleanCategory = category.replace(/^\*+\s*/, '').trim();
+    
+    card.innerHTML = `
+        <div class="card-body text-center">
+            <div class="category-icon-wrapper mb-3">
+                <i class="fas ${icon}"></i>
+            </div>
+            <h5 class="card-title">${cleanCategory}</h5>
+            <p class="card-text text-muted">${faqs.length} question${faqs.length !== 1 ? 's' : ''}</p>
+            <div class="category-btn">
+                <i class="fas fa-arrow-right me-1"></i>View Questions
+            </div>
+        </div>
+    `;
+    
+    // Make the entire card clickable
+    card.addEventListener('click', function() {
+        showCategoryFAQs(category);
+    });
+    
+    // Add keyboard accessibility
+    card.setAttribute('tabindex', '0');
+    card.setAttribute('role', 'button');
+    card.setAttribute('aria-label', `View ${cleanCategory} questions`);
+    
+    card.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            showCategoryFAQs(category);
+        }
+    });
+    
+    col.appendChild(card);
+    return col;
+}
+
+/**
+ * Get icon for category
+ * @param {string} category - Category name
+ * @returns {string} - Font Awesome icon class
+ */
+function getCategoryIcon(category) {
+    if (!category) return 'fa-question-circle';
+    const key = category.toLowerCase();
+    if (key.includes('photo day') || key.includes('photo-day')) return 'fa-camera';
+    if (key.includes('order') || key.includes('shipping')) return 'fa-truck';
+    if (key.includes('payment') || key.includes('account')) return 'fa-credit-card';
+    if (key.includes('return') || key.includes('support')) return 'fa-headset';
+    if (key.includes('product')) return 'fa-box';
+    return 'fa-question-circle';
+}
+
+/**
+ * Get color for category
+ * @param {string} category - Category name
+ * @returns {string} - Bootstrap color class
+ */
+function getCategoryColor(category) {
+    const colors = {
+        'Order & Shipping': 'primary',
+        'Account & Payment': 'success',
+        'Returns & Support': 'warning',
+        'Product & Services': 'info',
+        'General': 'secondary'
+    };
+    
+    return colors[category] || 'secondary';
+}
+
+/**
+ * Show FAQs for a specific category
+ * @param {string} category - Category name
+ */
+function showCategoryFAQs(category) {
+    const categoryCards = document.getElementById('category-cards');
+    const accordionContainer = document.getElementById('faq-accordion-container');
+    const categoryTitle = document.getElementById('selected-category-title');
+    const accordion = document.getElementById('faqAccordion');
+    
+    // Hide category cards and show accordion
+    categoryCards.style.display = 'none';
+    accordionContainer.style.display = 'block';
+    
+    // Set category title and clean it
+    const cleanCategory = category.replace(/^\*+\s*/, '').trim();
+    categoryTitle.textContent = cleanCategory;
+    
+    // Clear existing accordion items
+    accordion.innerHTML = '';
+    
+    // Get FAQs for this category
+    const categoryFaqs = window.categorizedFaqs[category] || [];
+    
+    // Create FAQ items
+    categoryFaqs.forEach((faq, index) => {
+        const faqItem = createFAQItem(faq, index);
+        accordion.appendChild(faqItem);
+    });
+    
+    // Initialize back button functionality
+    initBackButton();
+    
+    // Announce to screen readers
+    announceToScreenReader(`Showing ${categoryFaqs.length} questions in ${cleanCategory}`);
+}
+
+/**
+ * Initialize back button functionality
+ */
+function initBackButton() {
+    const backButton = document.getElementById('back-to-categories');
+    const categoryCards = document.getElementById('category-cards');
+    const accordionContainer = document.getElementById('faq-accordion-container');
+    
+    backButton.onclick = function() {
+        // Show category cards container by removing inline styles and restoring Bootstrap classes
+        categoryCards.removeAttribute('style');
+        categoryCards.className = 'row';
+        accordionContainer.style.display = 'none';
+        
+        // Clear search if active
+        const searchInput = document.getElementById('faq-search');
+        if (searchInput && searchInput.value) {
+            searchInput.value = '';
+            searchInput.dispatchEvent(new Event('input'));
+        }
+        
+        // Announce to screen readers
+        announceToScreenReader('Returned to FAQ categories');
+    };
 }
 
 /**
  * Create a single FAQ accordion item
- * @param {Object} faq - FAQ object with question, answer, and keywords
+ * @param {Object} faq - FAQ object with question, answer, keywords, and category
  * @param {number} index - Index of the FAQ item
  * @returns {HTMLElement} - FAQ accordion item element
  */
@@ -145,13 +319,14 @@ function createFAQItem(faq, index) {
     const faqItem = document.createElement('div');
     faqItem.className = 'accordion-item';
     faqItem.setAttribute('data-faq-item', '');
+    faqItem.setAttribute('data-category', faq.category);
     
     // Add keywords as data attribute for search
     if (faq.keywords) {
         faqItem.setAttribute('data-keywords', faq.keywords.toLowerCase());
     }
     
-    const itemId = index + 1;
+    const itemId = `faq-${Date.now()}-${index}`;
     const isFirst = index === 0;
     
     // Convert markdown links in the answer
@@ -182,11 +357,21 @@ function createFAQItem(faq, index) {
 }
 
 /**
+ * Convert markdown links to HTML
+ * @param {string} text - Text containing markdown links
+ * @returns {string} - Text with markdown links converted to HTML
+ */
+function convertMarkdownLinks(text) {
+    // Convert markdown links [text](url) to HTML <a> tags
+    return text.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>');
+}
+
+/**
  * Show error message when FAQ loading fails
  */
 function showFAQError() {
-    const accordionContainer = document.getElementById('faqAccordion');
-    const loadingElement = document.getElementById('faq-loading');
+    const categoryCardsContainer = document.getElementById('category-cards');
+    const loadingElement = document.getElementById('categories-loading');
     
     if (loadingElement) {
         loadingElement.innerHTML = `
@@ -204,7 +389,6 @@ function showFAQError() {
  */
 function initFAQSearch() {
     const searchInput = document.getElementById('faq-search');
-    const faqItems = document.querySelectorAll('[data-faq-item]');
     
     if (!searchInput) {
         console.warn('FAQ search input not found');
@@ -215,33 +399,14 @@ function initFAQSearch() {
     searchInput.addEventListener('input', function(e) {
         const searchTerm = e.target.value.toLowerCase().trim();
         
-        // Filter FAQ items
-        faqItems.forEach(item => {
-            const questionText = item.querySelector('.accordion-button').textContent.toLowerCase();
-            const answerText = item.querySelector('.accordion-body').textContent.toLowerCase();
-            const keywords = item.getAttribute('data-keywords') || '';
-            
-            const matchesSearch = questionText.includes(searchTerm) || 
-                                 answerText.includes(searchTerm) || 
-                                 keywords.includes(searchTerm);
-            
-            // Show/hide items based on search
-            if (searchTerm === '' || matchesSearch) {
-                item.style.display = 'block';
-                
-                // Highlight search terms if present
-                if (searchTerm !== '') {
-                    highlightSearchTerms(item, searchTerm);
-                } else {
-                    removeHighlights(item);
-                }
-            } else {
-                item.style.display = 'none';
-            }
-        });
+        if (searchTerm === '') {
+            // If search is empty, show category cards
+            showCategoryCards();
+            return;
+        }
         
-        // Update search results count
-        updateSearchResultsCount(searchTerm, faqItems);
+        // Perform search across all FAQs
+        performSearch(searchTerm);
     });
     
     // Clear search functionality
@@ -255,70 +420,72 @@ function initFAQSearch() {
 }
 
 /**
- * Highlight search terms in FAQ items
- * @param {HTMLElement} item - The FAQ item element
- * @param {string} searchTerm - The search term to highlight
+ * Perform search across all FAQs
+ * @param {string} searchTerm - Search term
  */
-function highlightSearchTerms(item, searchTerm) {
-    const questionElement = item.querySelector('.accordion-button');
-    const answerElement = item.querySelector('.accordion-body');
+function performSearch(searchTerm) {
+    const categoryCards = document.getElementById('category-cards');
+    const accordionContainer = document.getElementById('faq-accordion-container');
+    const categoryTitle = document.getElementById('selected-category-title');
+    const accordion = document.getElementById('faqAccordion');
     
-    // Remove existing highlights
-    removeHighlights(item);
+    // Hide category cards and show accordion
+    categoryCards.style.display = 'none';
+    accordionContainer.style.display = 'block';
     
-    // Highlight in question
-    if (questionElement.textContent.toLowerCase().includes(searchTerm)) {
-        const regex = new RegExp(`(${escapeRegExp(searchTerm)})`, 'gi');
-        questionElement.innerHTML = questionElement.textContent.replace(regex, '<span class="faq-highlight">$1</span>');
-    }
+    // Set search results title
+    categoryTitle.textContent = `Search Results for "${searchTerm}"`;
     
-    // Highlight in answer
-    if (answerElement.textContent.toLowerCase().includes(searchTerm)) {
-        const regex = new RegExp(`(${escapeRegExp(searchTerm)})`, 'gi');
-        answerElement.innerHTML = answerElement.textContent.replace(regex, '<span class="faq-highlight">$1</span>');
-    }
-}
-
-/**
- * Remove highlights from FAQ items
- * @param {HTMLElement} item - The FAQ item element
- */
-function removeHighlights(item) {
-    const highlights = item.querySelectorAll('.faq-highlight');
-    highlights.forEach(highlight => {
-        highlight.outerHTML = highlight.textContent;
+    // Clear existing accordion items
+    accordion.innerHTML = '';
+    
+    // Filter FAQs based on search term
+    const searchResults = window.allFaqs.filter(faq => {
+        const questionText = faq.question.toLowerCase();
+        const answerText = faq.answer.toLowerCase();
+        const keywords = faq.keywords.toLowerCase();
+        
+        return questionText.includes(searchTerm) || 
+               answerText.includes(searchTerm) || 
+               keywords.includes(searchTerm);
     });
-}
-
-/**
- * Update search results count display
- * @param {string} searchTerm - The current search term
- * @param {NodeList} faqItems - All FAQ items
- */
-function updateSearchResultsCount(searchTerm, faqItems) {
-    const visibleItems = Array.from(faqItems).filter(item => 
-        item.style.display !== 'none'
-    );
     
-    // You can add a results counter element if needed
-    // For now, we'll just log the count
-    if (searchTerm !== '') {
-        console.log(`Found ${visibleItems.length} matching FAQ items`);
+    // Create FAQ items for search results
+    searchResults.forEach((faq, index) => {
+        const faqItem = createFAQItem(faq, index);
+        accordion.appendChild(faqItem);
+    });
+    
+    // Show "no results" message if needed
+    if (searchResults.length === 0) {
+        accordion.innerHTML = `
+            <div class="text-center py-4">
+                <i class="fas fa-search fa-2x text-muted mb-3"></i>
+                <p class="text-muted">No questions found matching "${searchTerm}"</p>
+                <p class="text-muted">Try searching with different keywords or browse by category.</p>
+            </div>
+        `;
     }
+    
+    // Initialize back button functionality
+    initBackButton();
+    
+    // Announce to screen readers
+    announceToScreenReader(`Found ${searchResults.length} matching questions`);
 }
 
 /**
- * Escape special characters for regex
- * @param {string} string - The string to escape
- * @returns {string} - Escaped string
+ * Show category cards (used when search is cleared)
  */
-function escapeRegExp(string) {
-    return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+function showCategoryCards() {
+    const categoryCards = document.getElementById('category-cards');
+    const accordionContainer = document.getElementById('faq-accordion-container');
+    
+    // Show category cards container by removing inline styles and restoring Bootstrap classes
+    categoryCards.removeAttribute('style');
+    categoryCards.className = 'row';
+    accordionContainer.style.display = 'none';
 }
-
-
-
-
 
 /**
  * Accessibility Enhancements
@@ -394,12 +561,9 @@ function announceToScreenReader(message) {
     }
 }
 
-
-
-
-
 // Export functions for potential external use
 window.SNAPSupport = {
     initFAQSearch,
-    announceToScreenReader
+    announceToScreenReader,
+    showCategoryFAQs
 }; 

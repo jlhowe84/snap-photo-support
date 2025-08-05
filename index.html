@@ -20,10 +20,9 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-md-6">
-                    <h1 class="mb-0">
-                        <i class="fas fa-camera me-2"></i>
-                        SNAP Photo Support
-                    </h1>
+                    <div class="logo-container mb-0">
+                        <img src="assets/snap-logo.png" alt="SNAP Photo Support" class="header-logo">
+                    </div>
  
                 </div>
                 <div class="col-md-6 text-md-end">
@@ -80,14 +79,29 @@
                         </div>
                     </div>
 
-                    <!-- FAQ Accordion -->
-                    <div class="accordion" id="faqAccordion" role="tablist" aria-multiselectable="true">
-                        <!-- FAQ items will be dynamically loaded here -->
-                        <div id="faq-loading" class="text-center py-4">
-                            <div class="spinner-border text-primary" role="status">
-                                <span class="visually-hidden">Loading FAQs...</span>
+                    <!-- FAQ Category Cards -->
+                    <div id="faq-categories" class="mb-4">
+                        <div class="row" id="category-cards">
+                            <!-- Category cards will be dynamically loaded here -->
+                            <div id="categories-loading" class="text-center py-4">
+                                <div class="spinner-border text-primary" role="status">
+                                    <span class="visually-hidden">Loading FAQ categories...</span>
+                                </div>
+                                <p class="mt-2">Loading FAQ categories...</p>
                             </div>
-                            <p class="mt-2">Loading frequently asked questions...</p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Accordion (Hidden by default, shown when category is selected) -->
+                    <div id="faq-accordion-container" style="display: none;">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <h3 id="selected-category-title" class="mb-0"></h3>
+                            <button class="btn btn-outline-secondary btn-sm" id="back-to-categories">
+                                <i class="fas fa-arrow-left me-1"></i>Back to Categories
+                            </button>
+                        </div>
+                        <div class="accordion" id="faqAccordion" role="tablist" aria-multiselectable="true">
+                            <!-- FAQ items will be dynamically loaded here -->
                         </div>
                     </div>
                 </div>

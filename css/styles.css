@@ -17,6 +17,18 @@
     --dark-color: #2C3E50;
 }
 
+/* Header Logo Styles */
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.header-logo {
+    max-height: 60px;
+    width: auto;
+    object-fit: contain;
+}
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
@@ -76,6 +88,184 @@ header h1 {
     border-color: var(--secondary-color);
     color: white;
     border-radius: 25px 0 0 25px;
+}
+
+/* FAQ Category Cards Styles */
+.category-card {
+    border: 4px solid transparent;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    cursor: pointer;
+    background: white;
+    position: relative;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Ensure Bootstrap grid layout is maintained */
+#category-cards.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -0.75rem;
+    margin-left: -0.75rem;
+}
+
+#category-cards.row > .col-md-6.col-lg-4 {
+    display: block;
+    flex: 0 0 auto;
+    width: 100%;
+    padding-right: 0.75rem;
+    padding-left: 0.75rem;
+}
+
+@media (min-width: 768px) {
+    #category-cards.row > .col-md-6.col-lg-4 {
+        flex: 0 0 auto;
+        width: 50%;
+    }
+}
+
+@media (min-width: 992px) {
+    #category-cards.row > .col-md-6.col-lg-4 {
+        flex: 0 0 auto;
+        width: 33.33333333%;
+    }
+}
+
+.category-card:hover,
+.category-card:focus {
+    transform: scale(1.02);
+    z-index: 10;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    outline: none;
+    border-color: var(--secondary-color);
+}
+
+.category-card .card-body {
+    padding: 2.5rem 1.5rem;
+    position: relative;
+    z-index: 1;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.category-icon-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    height: 6rem;
+    margin-bottom: 1.5rem;
+}
+
+.category-icon-wrapper i {
+    font-size: 4rem;
+    display: block;
+    transition: all 0.3s ease;
+    transform-origin: center;
+}
+
+.category-card:hover .category-icon-wrapper i {
+    transform: scale(1.2);
+    color: var(--secondary-color);
+}
+
+.category-card .card-title {
+    font-weight: 700;
+    color: var(--dark-color);
+    margin-bottom: 0.75rem;
+    font-size: 1.25rem;
+    letter-spacing: -0.5px;
+}
+
+.category-card .card-title::before {
+    content: '' !important;
+}
+
+.category-card .card-text {
+    font-size: 0.95rem;
+    margin-bottom: 1.75rem;
+    color: #6c757d;
+    font-weight: 500;
+}
+
+.category-btn {
+    border-radius: 25px;
+    padding: 0.75rem 1.5rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 0.85rem;
+    border: none;
+    position: relative;
+    overflow: hidden;
+}
+
+.category-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.category-btn:hover::before {
+    left: 100%;
+}
+
+.category-btn:hover {
+    /* Removed drop shadow and transform on button hover */
+}
+
+/* Category-specific icon colors */
+.category-card[data-category="Order & Shipping"] .category-icon-wrapper i { color: #667eea; }
+.category-card[data-category="Account & Payment"] .category-icon-wrapper i { color: #f093fb; }
+.category-card[data-category="Returns & Support"] .category-icon-wrapper i { color: #4facfe; }
+.category-card[data-category="Product & Services"] .category-icon-wrapper i { color: #43e97b; }
+.category-card[data-category="General"] .category-icon-wrapper i { color: #fa709a; }
+.category-card[data-category="Photo Day"] .category-icon-wrapper i { color: #ff6b6b; }
+
+/* Category-specific button colors */
+.category-card[data-category="Order & Shipping"] .category-btn { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; }
+.category-card[data-category="Account & Payment"] .category-btn { background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); color: white; }
+.category-card[data-category="Returns & Support"] .category-btn { background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); color: white; }
+.category-card[data-category="Product & Services"] .category-btn { background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%); color: white; }
+.category-card[data-category="General"] .category-btn { background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); color: white; }
+.category-card[data-category="Photo Day"] .category-btn { background: linear-gradient(135deg, #ff6b6b 0%, #ff8e8e 100%); color: white; }
+
+/* FAQ Accordion Container Styles */
+#faq-accordion-container {
+    background: white;
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+#selected-category-title {
+    color: var(--primary-color);
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
+#back-to-categories {
+    border-radius: 20px;
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+#back-to-categories:hover {
+    transform: translateX(-2px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
 
 /* Accordion Styles */
@@ -249,22 +439,30 @@ footer h5 {
     .form-select {
         border: 2px solid var(--dark-color);
     }
+    
+    .category-card {
+        border: 2px solid var(--dark-color);
+    }
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    .header-logo {
+        max-height: 45px;
+    }
+    
     header h1 {
         font-size: 2rem;
     }
     
     .contact-info {
-        text-align: left !important;
-        margin-top: 1rem;
+        text-align: center;
+        margin-bottom: 1rem;
     }
     
     /* Tablet FAQ Improvements */
     #faq-section {
-        padding: 2.5rem 0;
+        padding: 2rem 0;
         margin-left: -15px;
         margin-right: -15px;
         padding-left: 15px;
@@ -275,37 +473,47 @@ footer h5 {
         font-size: 1.75rem;
     }
     
+    .category-card .card-body {
+        padding: 2rem 1.25rem;
+    }
+    
+    .category-icon-wrapper i {
+        font-size: 3rem !important;
+    }
+    
     .accordion-button {
-        padding: 1.5rem 1.25rem;
-        font-size: 1.1rem;
+        padding: 1rem 1.25rem;
+        font-size: 0.95rem;
     }
     
     .accordion-body {
-        padding: 1.5rem 1.25rem;
-        font-size: 1rem;
+        padding: 1.25rem;
     }
     
     .card-body {
-        padding: 1.5rem;
+        padding: 2rem;
     }
     
     #faq-section,
     #support-form-section {
-        padding: 2rem 0;
+        margin-bottom: 2rem;
     }
     
     .btn-primary {
-        width: 100%;
-        margin-top: 1rem;
+        padding: 10px 25px;
+        font-size: 0.9rem;
     }
 }
 
 @media (max-width: 576px) {
+    .header-logo {
+        max-height: 35px;
+    }
+    
     header h1 {
         font-size: 1.75rem;
     }
     
-    /* Mobile FAQ Section Improvements */
     #faq-section {
         padding: 1.5rem 0;
         margin-left: -15px;
@@ -319,50 +527,78 @@ footer h5 {
         margin-bottom: 1.5rem;
     }
     
-    /* Mobile FAQ Search */
     #faq-search {
-        padding: 15px 20px;
-        font-size: 16px; /* Prevents zoom on iOS */
+        font-size: 0.9rem;
+        padding: 10px 15px;
     }
     
     .input-group-text {
-        padding: 15px 20px;
+        padding: 10px 15px;
     }
     
-    /* Mobile Accordion Improvements */
+    /* Mobile Category Cards */
+    .category-card .card-body {
+        padding: 2rem 1rem;
+    }
+    
+    .category-card .card-title {
+        font-size: 1.1rem;
+    }
+    
+    .category-card .card-text {
+        font-size: 0.85rem;
+    }
+    
+    .category-icon-wrapper i {
+        font-size: 2.5rem !important;
+    }
+    
+    .category-btn {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.8rem;
+    }
+    
+    /* Mobile FAQ Accordion Container */
+    #faq-accordion-container {
+        padding: 1.5rem;
+        margin: 0 -15px;
+        border-radius: 0;
+    }
+    
+    #selected-category-title {
+        font-size: 1.25rem;
+    }
+    
     .accordion-item {
         margin-bottom: 0.75rem;
         border-radius: 8px !important;
     }
     
     .accordion-button {
-        padding: 1.25rem 1rem;
-        font-size: 1rem;
-        line-height: 1.4;
-        min-height: 60px; /* Better touch target */
-        display: flex;
-        align-items: center;
+        padding: 1rem 1.25rem;
+        font-size: 0.9rem;
+        font-weight: 600;
     }
     
     .accordion-button::after {
-        margin-left: auto;
-        flex-shrink: 0;
+        width: 1rem;
+        height: 1rem;
+        background-size: 1rem;
     }
     
     .accordion-body {
-        padding: 1.25rem 1rem;
-        font-size: 0.95rem;
-        line-height: 1.6;
+        padding: 1rem 1.25rem;
+        font-size: 0.9rem;
+        line-height: 1.5;
     }
     
-    /* Remove hover effects on mobile */
     .accordion-item:hover {
         transform: none;
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     }
     
     .card-body {
-        padding: 1rem;
+        padding: 1.5rem;
     }
 }
 
@@ -381,6 +617,12 @@ footer h5 {
     .accordion-button {
         background: white !important;
         color: black !important;
+    }
+    
+    .category-card {
+        break-inside: avoid;
+        box-shadow: none !important;
+        border: 1px solid #ccc !important;
     }
 }
 
