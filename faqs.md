@@ -15,7 +15,7 @@ If you can’t make it to picture day at all, we can schedule a makeup session a
 ## Do coaches need to have their photo taken?
 Yes. Coaches are photographed individually so they can be included in the final team photo layout. 
 
-**IMPORTANT: If you coach multiple teams, you must have your photo taken separately for each team. This can be done during the same session, but please inform our staff at the photo check-in table that you coach more than one team.**
+IMPORTANT: If you coach multiple teams, you must have your photo taken separately for each team. This can be done during the same session, but please inform our staff at the photo check-in table that you coach more than one team.
 **Keywords:** coach photo, team photo, coach picture, coach required, coach participation, team layout
 **Category:** Photo Day
 
