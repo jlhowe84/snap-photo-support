@@ -1,5 +1,51 @@
 # SNAP Photo FAQ
 
+## What do I need to bring to picture day?
+All you need is your athlete and any equipment you'd normally bring (bats, gloves, sticks, Soccer Balls, etc.). Each player will receive a Photo Ticket at check-in, which they'll hand to the photographer before getting their photo taken.
+If your athlete or coach is involved with multiple teams, please bring the correct jersey for each team and let the SNAP! check-in representative know. Separate photos are required for each team.
+**Keywords:** picture day, what to bring, equipment, photo ticket, check-in, jersey, multiple teams, team photo, required items, athlete, coach, sports gear
+**Category:** Photo Day
+
+## I can’t make my team’s scheduled time. What are my options?
+Please contact us ahead of time at 215-256-9151. We’re happy to offer an alternate time slot if possible. 
+If you can’t make it to picture day at all, we can schedule a makeup session at our studio in Harleysville or if available another local photo shoot.
+**Keywords:** reschedule, makeup session, alternate time, missed picture day, can't attend, schedule conflict, photo day options, studio session, local photo shoot
+**Category:** Photo Day
+
+## Do coaches need to have their photo taken?
+Yes. Coaches are photographed individually so they can be included in the final team photo layout. IMPORTANT: If you coach multiple teams, you must have your photo taken separately for each team. This can be done during the same session, but please inform our staff at the photo check-in table that you coach more than one team.
+**Keywords:** coach photo, team photo, coach picture, coach required, coach participation, team layout
+**Category:** Photo Day
+
+## Is there a team photo?
+Yes, team photos are created by compositing together individual images of each player and coach on your team. 
+**Keywords:** 
+**Category:** Photo Day
+
+## Can my children be photographed together?
+Yes! We offer Buddy Photos for siblings or friends. These are not available for prepay but will appear in the online gallery after picture day for you to view and purchase.
+**Keywords:** 
+**Category:** Photo Day
+
+## When will my preordered photos be delivered?
+Preordered photos are delivered within 4–6 weeks of picture day, either to your organization or directly to your home, depending on your league’s preference. If your order hasn’t arrived after 6 weeks, contact us and we’ll be happy to help.
+**Keywords:** 
+**Category:** Ordering & Payments
+
+## Picture day has already passed and I didn’t order. Can I still buy photos?
+Yes! While the prepay store closes at midnight on picture day, you'll still be able to order once the online proofing gallery goes live — typically about 2 weeks after photo day. If we have your email, you’ll automatically receive a link when it's ready. If not, contact us and we’ll get you access.
+**Keywords:** 
+**Category:** Ordering & Payments
+
+## Can I reorder prints or products later? 
+Yes. Once the gallery is live, you can return to it anytime using your child’s access code to place additional orders.
+**Keywords:** 
+**Category:** Ordering & Payments
+
+
+
+
+
 ## How do I track my orderssssss?
 You can track your order by logging into your account and visiting the "My Orders" section. Alternatively, you can use the tracking number provided in your order confirmation email to track your package on our website or through the shipping carrier's website.
 **Keywords:** tracking, order status, package location, delivery, shipping status, where is my order, order confirmation
