@@ -2,7 +2,7 @@
 
 ## How does picture day work?
 We aim to make photo day smooth and quick for everyone. Here’s what to expect:
-1. **Arrive early** – Please arrive about 15 minutes before your scheduled time.  
+1. -- Arrive early Please arrive about 15 minutes before your scheduled time.  
 2. **Check in** – Look for our picture day coordinator’s table or station.  
 3. **Receive your photo card** – Your coach or our coordinator will hand you a card with your player’s information.  
 4. **Get in line** – Once you have your card, head directly to the photo line.  
