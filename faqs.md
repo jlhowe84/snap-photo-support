@@ -1,15 +1,7 @@
 # SNAP Photo FAQ
 
 ## How does picture day work?
-We aim to make photo day smooth and quick for everyone. Here’s what to expect:
-1. -- Arrive early Please arrive about 15 minutes before your scheduled time.  
-2. **Check in** – Look for our picture day coordinator’s table or station.  
-3. **Receive your photo card** – Your coach or our coordinator will hand you a card with your player’s information.  
-4. **Get in line** – Once you have your card, head directly to the photo line.  
-5. **Smile for the camera** – Hand your card to the photographer. We’ll take at least two shots:  
-   - One for the **individual photo**  
-   - One for the **team composite**  
-6. **All done** – After your pictures are taken, you’re free to go. No need to wait for your entire team to finish.
+We aim to make photo day quick and easy. Arrive about 15 minutes early, check in with our coordinator, and collect your photo card from your coach or our staff. Head to the photo line, hand your card to the photographer, and we’ll take one individual and one team photo. Once finished, you’re free to go.
 **Keywords:** picture day process, arrival time, check-in, photo card, photo steps, individual photo, team photo, lineup instructions
 **Category:** Photo Day
 
@@ -177,13 +169,10 @@ Yes. Full-resolution downloads are available and are suitable for large prints
 **Category:** Online Access & Downloads
 
 ## There’s a problem with my order. What should I do?
-We’re Here to Help!
-Call us at **215-256-9151** (Monday–Friday, 9am–4pm) or contact us online.
-Please have the following ready:
-
-- Your league or organization name  
-- Your child’s name  
-- A brief description of the issue  
+We’re Here to Help! Call us at 215-256-9151 (Monday–Friday, 9am–4pm) or contact us online.
+Please have the following ready: Your league or organization name, Your child’s name, and A brief description of the issue. We’ll work quickly to resolve it.
+**Keywords:** order issue, damaged product, wrong order, order help
+**Category:** Support & Troubleshooting
 
 We’ll work quickly to resolve it.
 **Keywords:** order issue, damaged product, wrong order, order help
