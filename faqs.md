@@ -1,5 +1,28 @@
 # SNAP Photo FAQ
 
+## How does picture day work?
+We aim to make photo day smooth and quick for everyone. Here’s what to expect:
+1. **Arrive early** – Please arrive about 15 minutes before your scheduled time.  
+2. **Check in** – Look for our picture day coordinator’s table or station.  
+3. **Receive your photo card** – Your coach or our coordinator will hand you a card with your player’s information.  
+4. **Get in line** – Once you have your card, head directly to the photo line.  
+5. **Smile for the camera** – Hand your card to the photographer. We’ll take at least two shots:  
+   - One for the **individual photo**  
+   - One for the **team composite**  
+6. **All done** – After your pictures are taken, you’re free to go. No need to wait for your entire team to finish.
+**Keywords:** picture day process, arrival time, check-in, photo card, photo steps, individual photo, team photo, lineup instructions
+**Category:** Photo Day
+
+## What happens if it rains on picture day?
+If your photos are scheduled outdoors, we’ll either move to an indoor location or reschedule in coordination with your league. Updates will be sent through your league.
+**Keywords:** rain plan, bad weather, reschedule photo day, indoor location, weather delay, photo day changes
+**Category:** Photo Day
+
+## I have two kids on two different teams, can I bring them at the same time?
+Yes, if you have multiple children, you may bring both of your children to one of their time slots.
+**Keywords:** multiple kids, two teams, bring together, photo schedule, sibling scheduling
+**Category:** Photo Day
+
 ## What do I need to bring to picture day?
 All you need is your athlete and any equipment you'd normally bring (bats, gloves, sticks, Soccer Balls, etc.). Each player will receive a Photo Ticket at check-in, which they'll hand to the photographer before getting their photo taken.
 If your athlete or coach is involved with multiple teams, please bring the correct jersey for each team and let the SNAP! check-in representative know. Separate photos are required for each team.
@@ -14,101 +37,179 @@ If you can’t make it to picture day at all, we can schedule a makeup session a
 
 ## Do coaches need to have their photo taken?
 Yes. Coaches are photographed individually so they can be included in the final team photo layout. 
-
 IMPORTANT: If you coach multiple teams, you must have your photo taken separately for each team. This can be done during the same session, but please inform our staff at the photo check-in table that you coach more than one team.
 **Keywords:** coach photo, team photo, coach picture, coach required, coach participation, team layout
 **Category:** Photo Day
 
 ## Is there a team photo?
 Yes, team photos are created by compositing together individual images of each player and coach on your team. 
-**Keywords:** 
+**Keywords:** team photo, composite photo, group shot, team picture, digitally created team image
 **Category:** Photo Day
 
 ## Can my children be photographed together?
 Yes! We offer Buddy Photos for siblings or friends. These are not available for prepay but will appear in the online gallery after picture day for you to view and purchase.
-**Keywords:** 
+**Keywords:** buddy photo, sibling photo, friends photo, group picture, multiple children together
+**Category:** Photo Day
+
+## Will there be retakes?
+We offer retakes and make up sessions at our studio in Harleysville.  You can schedule your appointment completely online and pick a time that fits your schedule. 
+**Keywords:** retake session, makeup photos, reshoot, reschedule photo, redo picture day
+**Category:** Photo Day
+
+## Will my child be photographed if I don’t preorder?
+Yes. Every athlete is photographed so you can view and order photos later, even if you didn’t prepay.
+**Keywords:** no preorder, still photographed, photo without order, late order availability
+**Category:** Photo Day
+
+## What should my child wear for photo day?
+Full uniform (jersey tucked in, clean pants/shorts). Hats and sunglasses should only be worn if they are part of the official uniform.
+**Keywords:** photo day outfit, uniform guidelines, dress code, clothing requirements, attire rules
+**Category:** Photo Day
+
+## Can I get a coach/player photo taken on picture day?
+Yes. All you need to do to have a coach/player photo taken is write your email down on your photo card, stand in line with your player(s), and let the photographer know you would like a coach/player photo as well.
+**Keywords:** coach player photo, coach with child, special photo request, photo together
+**Category:** Photo Day
+
+## Can you composite the coach/player picture or buddy pictures?
+For best results, we take the photo with you and your player together on picture day.  To keep things looking natural, they are not composited.
+**Keywords:** composite request, edited group photo, photoshop buddy picture, combining images
+**Category:** Photo Day
+
+## How do I find out our scheduled time for Photo Day?
+The league will be sharing the schedule to the coaches and parents and will be able to let you know what your scheduled time is.
+**Keywords:** photo day schedule, when is my photo time, schedule info, time slot, appointment time
 **Category:** Photo Day
 
 ## When will my preordered photos be delivered?
 Preordered photos are delivered within 4–6 weeks of picture day, either to your organization or directly to your home, depending on your league’s preference. If your order hasn’t arrived after 6 weeks, contact us and we’ll be happy to help.
-**Keywords:** 
+**Keywords:** preorder delivery, shipping time, when will I get my photos, delivery estimate
 **Category:** Ordering & Payments
 
 ## Picture day has already passed and I didn’t order. Can I still buy photos?
 Yes! While the prepay store closes at midnight on picture day, you'll still be able to order once the online proofing gallery goes live — typically about 2 weeks after photo day. If we have your email, you’ll automatically receive a link when it's ready. If not, contact us and we’ll get you access.
-**Keywords:** 
+**Keywords:** missed preorder, late order, order after photo day, post-event ordering
 **Category:** Ordering & Payments
 
 ## Can I reorder prints or products later? 
 Yes. Once the gallery is live, you can return to it anytime using your child’s access code to place additional orders.
-**Keywords:** 
+**Keywords:** reorder, second order, buy more prints, additional product order
 **Category:** Ordering & Payments
 
+## Can I change or cancel my order?
+Once an order is placed, they are automatically sent to our production lab. Typically we cannot adjust or modify any orders once they are placed. However, if you can contact us as soon as possible with your order details, we’ll do our best to accommodate your request.
+**Keywords:** cancel order, change order, edit order, modify purchase, stop order
+**Category:** Ordering & Payments
 
+## What forms of payment do you accept?
+We accept all major credit and debit cards through our secure online ordering system.
+**Keywords:** payment types, credit card, debit card, online payment, Apple Pay, Google Pay
+**Category:** Ordering & Payments
 
+## Do you offer discounts when ordering for multiple children?
+If you’re ordering for 3 or more children please contact us and we are happy to help!
+**Keywords:** multiple child discount, family discount, sibling discount, group discount
+**Category:** Ordering & Payments
 
+## Can I combine orders for multiple children in one transaction?
+Yes. Once galleries are live after picture day, you can add products for each child to your cart before checkout. While each package can only contain one child, you can still place one order for multiple products/packages. Currently, this option is not available for prepay orders. If placing a prepay order you will need to place a separate order for each child.
+**Keywords:** combined order, multiple kids one order, one checkout, single payment
+**Category:** Ordering & Payments
 
-## How do I track my orderssssss?
-You can track your order by logging into your account and visiting the "My Orders" section. Alternatively, you can use the tracking number provided in your order confirmation email to track your package on our website or through the shipping carrier's website.
-**Keywords:** tracking, order status, package location, delivery, shipping status, where is my order, order confirmation
-**Category:** Order & Shipping
+## Do you charge sales tax?
+Yes. Applicable state sales tax will be added to your order at checkout.
+**Keywords:** sales tax, tax policy, order tax, checkout fees
+**Category:** Ordering & Payments
 
-## What is your return policy?
-We offer a 30-day return policy for most items. Products must be in their original condition with all packaging intact. Some items may have different return policies due to their nature. Please contact our support team for specific return instructions.
-**Keywords:** refund, exchange, return shipping, money back, warranty, return policy, how to return, return process
-**Category:** Returns & Support
+## Do you offer refunds?
+Due to the custom nature of our products, we cannot issue refunds unless there is an error on our part. Please contact us within 7 days of receiving your order if there’s an issue.
+**Keywords:** refund policy, return, money back, order issue refund
+**Category:** Ordering & Payments
 
-## How do I reset my password?
-To reset your password, click on the "Forgot Password" link on the login page. Enter your email address, and we'll send you a secure link to create a new password. Make sure to check your spam folder if you don't receive the email within a few minutes.
-**Keywords:** forgot password, login help, account access, security, email reset, password recovery, can't login, locked out
-**Category:** Account & Payment
+## How do I track my order?
+Typically photo orders do not have individual tracking. All prepay orders can be expected within 6 weeks of picture day. Any orders after picture day will typically arrive within 10-14 business days.
+**Keywords:** track order, shipping status, delivery info, order tracking number
+**Category:** Ordering & Payments
 
-## What payment methods do you accept?
-We accept all major credit cards (Visa, MasterCard, American Express, Discover), PayPal, Apple Pay, Google Pay, and bank transfers for business accounts. All transactions are secured with SSL encryption to protect your payment information.
-**Keywords:** credit card, debit card, paypal, apple pay, google pay, payment options, secure payment, how to pay, payment methods
-**Category:** Account & Payment
+## I never ordered photos from last season, am I still able to place an order for a prior year?
+Absolutely!  While galleries archive after approximately 6 months, we can likely reopen the gallery so that you are able to order photos from the previous year. 
+**Keywords:** old order, past season photos, archived gallery, previous year pictures
+**Category:** Ordering & Payments
 
-## How long does shipping take?
-Standard shipping typically takes 3-5 business days within the continental US. Express shipping (1-2 business days) and overnight shipping are also available for an additional fee. International shipping times vary by location and can take 7-14 business days.
-**Keywords:** delivery time, shipping speed, express delivery, overnight, international shipping, when will I get my order, shipping options
-**Category:** Order & Shipping
+## Why should I preorder photos?
+All preorders receive free shipping to your home or league (based upon your organizations preference) as well as 10% off orders of $25 or more using the provided coupon code. 
+**Keywords:** preorder benefits, preorder discount, early order perks, free shipping offer
+**Category:** Ordering & Payments
 
-## Can I cancel my order after it's placed?
-Orders can be cancelled within 2 hours of placement if they haven't been processed for shipping. After that time, please contact our support team immediately. Once an order has shipped, it cannot be cancelled but can be returned following our return policy.
-**Keywords:** cancel order, order modification, change order, stop shipment, cancel my order, order cancellation
-**Category:** Order & Shipping
+## Where can I view my child’s photos?
+Photos will be available online around 2 weeks after picture day. A link will be emailed to the address you provided. If you don’t receive a link, or didn’t provide an email, contact us to request access.
+**Keywords:** view photos online, gallery link, photo access, see pictures
+**Category:** Online Access & Downloads
 
-## Do you ship internationally?
-Yes, we ship to most countries worldwide. International shipping rates and delivery times vary by location. You can check shipping options and costs during checkout by entering your shipping address.
-**Keywords:** international delivery, overseas shipping, global shipping, foreign countries, ship to mexico, ship to canada, international orders
-**Category:** Order & Shipping
+## What is my child’s access code?
+Each athlete has a unique access code (or personalized link) for their photo gallery. If you don’t have it, reach out to us (with your league/organization name and your child’s full name) and we would be happy to send it to you.
+**Keywords:** access code, gallery code, retrieve code, lost code
+**Category:** Online Access & Downloads
 
-## What if my order arrives damaged?
-If your order arrives damaged, please take photos of the damage and contact our support team within 48 hours of delivery. We'll arrange for a replacement or refund as appropriate.
-**Keywords:** damaged goods, broken items, replacement, insurance, claim, damaged package, broken product, damaged order
-**Category:** Photo Day
+## How can I download my Coach/Player photo?
+Coach/Player photos are sent directly to each coach near the end of the season. If you believe you should have received yours but haven’t, contact us and we’ll confirm it’s available and send you the download link.  
+**Keywords:** coach player download, special photo download, receive coach photo
+**Category:** Online Access & Downloads
 
-## How do I contact customer support?
-You can reach our customer support team by phone at 1-800-SNAP-PHOTO, by email at support@snapphoto.com, or by submitting a support ticket through this page. Our support hours are Monday through Friday, 9AM-6PM EST.
-**Keywords:** help, contact us, customer service, phone number, email support, live chat, get help, support hours, bananna
-**Category:** Returns & Support
+## When and how will I receive my preordered digital image download?
+An email with a link to download your photo will be sent when the job goes into production at the photo lab. This will usually be 1-2 weeks after photo day. Please contact us if you haven’t received it 2 weeks after picture day.
+**Keywords:** digital download delivery, receive photos online, download link time
+**Category:** Online Access & Downloads
 
-## Do you offer bulk discounts?
-Yes, we offer volume discounts for bulk orders. Please contact our sales team for pricing on orders of 10 or more items. We also offer special pricing for business accounts and educational institutions.
-**Keywords:** wholesale, bulk pricing, volume discount, business account, educational discount, bulk order, quantity discount
-**Category:** Account & Payment
+## How long will my child’s gallery be available?
+Galleries typically remain open for 6 months after posting. After that, images may be archived.
+**Keywords:** gallery expiration, how long open, archive policy, access duration
+**Category:** Online Access & Downloads
 
-## Another question
-and yet another answer. so cool!
-**Keywords:** example, sample, test, demo
-**Category:** General
+## Can I share my child’s access code with others?
+Yes. Anyone with the access code or personalized link can view and order from your child’s gallery.
+**Keywords:** share code, allow others access, family and friends order
+**Category:** Online Access & Downloads
 
-## Where are my pictures?!?!?
-chill, they are in production and will be on their way shortly.
-**Keywords:** photos, pictures, prints, production, processing time, photo prints, when will my photos arrive, photo processing
-**Category:** Product & Services
+## Are digital downloads high resolution?
+Yes. Full-resolution downloads are available and are suitable for large prints
+**Keywords:** image quality, high-res download, print quality photo
+**Category:** Online Access & Downloads
 
-## Do you offer gift wrapping?
-Yes, we offer gift wrapping for a small additional fee. You can select the gift wrapping option during checkout and add a personalized message.
-**Keywords:** gift wrap, gift wrapping, present, gift message, gift option, wrapping paper
-**Category:** Product & Services
+## There’s a problem with my order. What should I do?
+We’re Here to Help!
+Call us at **215-256-9151** (Monday–Friday, 9am–4pm) or contact us online.
+Please have the following ready:
+
+- Your league or organization name  
+- Your child’s name  
+- A brief description of the issue  
+
+We’ll work quickly to resolve it.
+**Keywords:** order issue, damaged product, wrong order, order help
+**Category:** Support & Troubleshooting
+
+## I didn’t receive my gallery link. What now?
+Check your spam or promotions folder. Sometimes the email gets filtered. If you still can’t find it, contact us with your league/organization name and your child’s name, and we’ll provide access.
+**Keywords:** missing link, no email, gallery access problem, resend link
+**Category:** Support & Troubleshooting
+
+## My child’s name is misspelled in the gallery — can it be fixed?
+Absolutely. Contact us with the correct spelling, and we’ll update the gallery and any orders.
+**Keywords:** name correction, spelling fix, gallery update, wrong name fix
+**Category:** Support & Troubleshooting
+
+## What if my photos arrive damaged?
+Contact us immediately with a photo of the damage, and we’ll arrange a free replacement.
+**Keywords:** damaged order, bent photo, replacement request, product damage
+**Category:** Support & Troubleshooting
+
+## Can you retouch or edit my photos?
+Light retouching (e.g., blemish removal) may be available for an additional fee when ordering. If you have a specific question about your photo, please contact us!
+**Keywords:** photo retouch, edit request, blemish removal, photo enhancement
+**Category:** Support & Troubleshooting
+
+## I missed the 6 month gallery window. Can I still order?
+In most cases, yes. Older images may be archived, but we can usually retrieve them. Please contact us with your league/organization and your child's full name. We are happy to help.
+**Keywords:** order after close, archive retrieval, late gallery access
+**Category:** Support & Troubleshooting
