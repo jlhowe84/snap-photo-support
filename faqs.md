@@ -114,7 +114,7 @@ Yes. Applicable state sales tax will be added to your order at checkout.
 **Category:** Ordering & Payments
 
 ## Do you offer refunds?
-If you placed a preorder and but are unable to attend photo day please contact us to arrange a time for a makeup. If you would prefer a refund please contact us through the form below or call 215-256-9151 so we can cancel your order and provide a refund. PLEASE NOTE: Due to the nature of digital products refunds are unavailble for digital download orders placed through your childs gallery. Please contact us within 7 days of receiving your order if there’s an issue.
+If you placed a preorder and are unable to attend photo day please contact us to arrange a time for a makeup. If you would prefer a refund please contact us through the form below or call 215-256-9151 so we can cancel your order and provide a refund. PLEASE NOTE: Due to the nature of digital products refunds are unavailable for digital download orders placed through your child's gallery. Please contact us within 7 days of receiving your order if there’s an issue.
 **Keywords:** refund policy, return, money back, order issue refund
 **Category:** Ordering & Payments
 
