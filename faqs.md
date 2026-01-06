@@ -1,6 +1,6 @@
 # SNAP Photo FAQ
 
-## I have never been to a picture day, how does it work?
+## I have never been to a picture day, how does it works?
 We aim to make photo day quick and easy. Arrive about 15 minutes early, check in with our coordinator, and collect your photo card from your coach or our staff. Head to the photo line, hand your card to the photographer, and we’ll take one individual and one team photo. Once finished, you’re free to go.
 **Keywords:** picture day process, arrival time, check-in, photo card, photo steps, individual photo, team photo, lineup instructions
 **Category:** Photo Day
